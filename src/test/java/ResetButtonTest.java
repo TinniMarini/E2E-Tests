@@ -23,8 +23,8 @@ public class ResetButtonTest extends BaseMethods {
         settingsPage.resetButton.click();
 
         Assert.assertEquals(url, "https://run.mocky.io/v3/27a44f7d-67ca-4e96-b901-a159d315b922");
-        Assert.assertEquals(number, "10");
-        Assert.assertEquals(interval, "01:00");
+        Assert.assertEquals(number, "5");
+        Assert.assertEquals(interval, "00:30");
     }
 
 }
