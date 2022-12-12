@@ -14,22 +14,16 @@ public class BaseMethods {
     @BeforeMethod
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("no-reset", "true");
-        capabilities.setCapability("fullreset", "false");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "10.0");
-        //capabilities.setCapability("udid", "emulator-5554");
-        capabilities.setCapability("appActivity", "com.socialpoststestassigmentnew.MainActivity");
 
         driver = new AndroidDriver(new URL("http://168.0.0.1:8888/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.setConnection(new ConnectionStateBuilder().withWiFiEnabled().withDataEnabled().build());
-        System.out.println("Test is started...");
     }
 
     @AfterMethod
     public void teardown() {
-        System.out.println("Test is completed...");
         driver.quit();
     }
 }
